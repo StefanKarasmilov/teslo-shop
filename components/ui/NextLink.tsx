@@ -5,7 +5,6 @@ interface Props {
   children: ReactNode
   href: string
   underline?: boolean
-  prefetch?: boolean
   style?: CSSProperties
 }
 
@@ -14,7 +13,6 @@ export const NextLink: FC<Props> = ({
   href,
   style,
   underline = false,
-  prefetch = true,
 }) => (
   <Link
     href={href}
@@ -23,7 +21,6 @@ export const NextLink: FC<Props> = ({
       textDecoration: underline ? 'underline' : 'none',
     }}
     className="next-link"
-    prefetch={prefetch}
   >
     {children}
   </Link>
