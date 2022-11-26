@@ -20,8 +20,8 @@ export const ProductCard: FC<Props> = ({ product }) => {
 
   const productImage = useMemo(() => {
     return isHovered
-      ? `products/${product.images[1]}`
-      : `products/${product.images[0]}`
+      ? `/products/${product.images[1]}`
+      : `/products/${product.images[0]}`
   }, [isHovered, product.images])
 
   return (
@@ -33,7 +33,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <Card>
-        <NextLink href="/product/slug">
+        <NextLink href={`/product/${product.slug}`}>
           <CardActionArea>
             <CardMedia
               component="img"
